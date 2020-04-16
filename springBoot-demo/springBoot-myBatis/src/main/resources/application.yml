@@ -1,0 +1,22 @@
+server:
+  port: 9001 #端口
+spring:
+  application:
+    name: springBoot-myBatis #服务名
+  datasource: #连接池四大参数
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbootdemo?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    druid:
+      initial-size: 1 #初始化连接数
+      min-idle: 1 #最小空闲连接
+      max-active: 20 #最大活动连接
+      test-on-borrow: true #获取连接时测试是否可用
+      stat-view-servlet:
+        allow: true #监控页面启动
+mybatis:
+  type-aliases-package: com.eu.demo.pojo  #别名扫描
+  mapper-locations: classpath:mapper/*.xml  #加载配置文件
+  configuration:
+    map-underscore-to-camel-case: true  #开启驼峰式命名
