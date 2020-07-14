@@ -1,0 +1,10 @@
+server:
+  port: 9007
+spring:
+  rabbitmq:
+    host: 47.104.0.152
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true #确认消息已经发送到交换机
+    publisher-returns: true #确认消息已经发送到队列

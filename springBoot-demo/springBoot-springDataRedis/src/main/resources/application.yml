@@ -1,0 +1,9 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: springBoot-springDataRedis
+  redis:
+    host: 192.168.206.139
+    port: 6379
+    password: 123456

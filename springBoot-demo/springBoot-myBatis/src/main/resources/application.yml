@@ -20,3 +20,4 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml  #加载配置文件
   configuration:
     map-underscore-to-camel-case: true  #开启驼峰式命名
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

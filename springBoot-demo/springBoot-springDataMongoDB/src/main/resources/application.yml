@@ -1,0 +1,9 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: springBoot-springDataMongoDB
+  data:
+    mongodb:
+      host: 127.0.01
+      database: people

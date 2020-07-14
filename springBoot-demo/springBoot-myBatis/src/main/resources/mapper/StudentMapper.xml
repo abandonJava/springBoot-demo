@@ -4,4 +4,48 @@
     <select id="findAll" resultType="com.eu.demo.pojo.Student">
         select *from student
     </select>
+
+    <select id="getStudent" resultType="com.eu.demo.pojo.Student">
+        select stu_name,sex,age
+        from student
+        where id=#{id};
+    </select>
+    
+    <insert id="addStudent" parameterType="com.eu.demo.pojo.Student">
+        insert into student(stu_name, sex, age) values (#{stuName},#{sex},#{age});
+    </insert>
+
+    <update id="updateStudent" parameterType="com.eu.demo.pojo.Student">
+        update student
+        set stu_name=#{stuName},
+            sex=#{sex},
+            age=#{age}
+        where id=#{id};
+    </update>
+
+    <delete id="deleteStudent">
+        delete from student where id=#{id};
+    </delete>
+
+    <select id="getStudentBysexAndage" parameterType="com.eu.demo.pojo.Student" resultType="com.eu.demo.pojo.Student">
+        select *
+        from student
+        where sex=#{sex} and age=#{age}
+    </select>
+
+    <select id="getStudentByAge" resultType="com.eu.demo.pojo.Student">
+        select stu_name,sex,age
+        from student
+        where age=#{age};
+    </select>
+
+    <select id="getStu" resultType="map">
+        select *from student where id=#{id};
+    </select>
+
+    <select id="getStus" resultType="com.eu.demo.pojo.Student">
+        select *
+        from student
+        where stu_name like concat("%",#{stuName},"%");
+    </select>
 </mapper>
